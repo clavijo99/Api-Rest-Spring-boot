@@ -2,6 +2,7 @@ package com.byteobe.delivery.controller;
 import com.byteobe.delivery.dto.RestaurantRequest;
 import com.byteobe.delivery.dto.RestaurantResponse;
 import com.byteobe.delivery.service.RestaurantService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -9,14 +10,12 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/restaurant")
+@RequiredArgsConstructor
 public class RestaurantController {
 
 
     private final RestaurantService restaurantService;
-
-    public RestaurantController(RestaurantService restaurantService){
-        this.restaurantService=restaurantService;
-    }
+    
 
 
     @GetMapping
